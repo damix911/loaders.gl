@@ -58,14 +58,14 @@ async function parse(data, options, context, loader) {
 
   // auto detect file type based on url
   let isTileset;
-  if (options.i3s.isTileset === 'auto') {
+  if (options.i3s.isTileset === 'auto' && options.i3s.isTileset !== 'auto') {
     isTileset = TILESET_REGEX.test(url.pathname);
   } else {
     isTileset = options.i3s.isTileset;
   }
 
   let isTileHeader;
-  if (options.isTileHeader === 'auto') {
+  if (options.isTileHeader === 'auto' && options.i3s.isTileHeader !== 'auto') {
     isTileHeader = TILE_HEADER_REGEX.test(url.pathname);
   } else {
     isTileHeader = options.i3s.isTileHeader;
